@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HowTo-Pet</title>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}" type="text/css">
+        
+    </head>
+    
+    <body>
+    
+        
+        <header id="header">
+            
+            <div class="contenedor_logo">
+                <img  class="logo"  src="{% static 'app/img/logo_trans.png' %}" alt="logo">
+            </div>
+    
+            <div>
+                
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="{% url 'home' %}"> Inicio </a></li>
+                        <li>
+                            <a href="{% url 'galeria' %}">usuario</a></li>
+    
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </li>  
+                        <li>
+                            <a href="#">{{ user.username}} </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'login' %}">Login</a>
+                        </li>
+                        
+                        {% endif %}
+                
+                    </ul>
+                </nav>
+    
+            </div>
+    
+        </header>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="{% static 'app/css/estiloquiz.css' %}">
+</head>
+<br>
+<br>
+<body>
+    <div>
+        <center><h1>Loro</h1></center>
+        <center><a style = "font-size: 20px;"> ¿Podrás cuidar a un loro?</a></center>
+    </div>
+    <div class="container">
+        <section id="p0">
+            <h3>1 - ¿Importa el tamaño de la jaula?</h3>
+            <label>
+                <input type="radio" value="1" name="p0" onclick="respuestaloro(0,this)"> Si
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0"onclick="respuestaloro(0,this)"> No
+            </label>
+        </section>
+        <section id="p1">
+            <h3>2 - ¿Pueden comer todo tipo de alimento, como la carne?</h3>
+            <label>
+                <input type="radio" value="1" name="p1" onclick="respuestaloro(1,this)"> Si.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1" onclick="respuestaloro(1,this)"> No.
+            </label>
+        </section>
+        <section id="p2">
+            <h3>3 - ¿El pico se debe gastar?</h3>
+            <label>
+                <input type="radio" value="1" name="p2" onclick="respuestaloro(2,this)"> Si, con un palo.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2" onclick="respuestaloro(2,this)"> No, no es necesario.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2" onclick="respuestaloro(2,this)"> Si, con piedra de calcio.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p2" onclick="respuestaloro(2,this)"> Si, con la comida.
+            </label>
+        </section>
+        <section id="p3">
+            <h3>4 - ¿Cada cuánto tienes que cambiar el suelo de la jaula?</h3>
+            <label>
+                <input type="radio" value="1" name="p3" onclick="respuestaloro(3,this)"> Una vez por semana
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3" onclick="respuestaloro(3,this)"> Una vez al mes
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3" onclick="respuestaloro(3,this)"> Una vez al año
+            </label>
+        </section>
+        <section id="p4">
+            <h3>5 - ¿Es necesario que los loros tengan juguetes? </h3>
+            <label>
+                <input type="radio" value="1" name="p4" onclick="respuestaloro(4,this)"> Si, estos permiten que se distraigan dentro de la jaula y les resulte más soportable el tiempo que pasan en ella
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4" onclick="respuestaloro(4,this)"> No, ya que se vuelven agresivos.
+            </label>
+        </section>
+        <button onclick="seleccionadaloro()">CORREGIR</button>
+        <H2>Cantidad acertadas: <span id="resultadoloro"></span></H2>
+        <h4>Conclusion: <span id="conclusionloro"></span> </H4>
+    </div>
+    <script  src="{% static 'app/js/scriptloro.js' %}"> </script>
+</body>
+</html>>

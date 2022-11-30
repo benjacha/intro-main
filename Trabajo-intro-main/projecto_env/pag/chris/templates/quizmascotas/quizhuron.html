@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HowTo-Pet</title>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}" type="text/css">
+        
+    </head>
+    
+    <body>
+    
+        
+        <header id="header">
+            
+            <div class="contenedor_logo">
+                <img  class="logo"  src="{% static 'app/img/logo_trans.png' %}" alt="logo">
+            </div>
+    
+            <div>
+                
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="{% url 'home' %}"> Inicio </a></li>
+                        <li>
+                            <a href="{% url 'mascota1pag' %}"> Atras </a></li>
+                        <li>
+                            <a href="{% url 'galeria' %}">usuario</a></li>
+    
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </li>  
+                        <li>
+                            <a href="#">{{ user.username}} </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'login' %}">Login</a>
+                        </li>
+                        
+                        {% endif %}
+                
+                    </ul>
+                </nav>
+    
+            </div>
+    
+        </header>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="{% static 'app/css/estiloquiz.css' %}">
+</head>
+<br>
+<br>
+<body>
+    <div>
+        <center><h1></h1></center>
+        <center><p>¿Podras cuidar a un Hurón?</p></center>
+    </div>
+    <div class="container">
+        <section id="p0">
+            <h3>1 - ¿Importa si convive con algún pájaro?</h3>
+            <label>
+                <input type="radio" value="1" name="p0" onclick="respuestahuron(0,this)"> Si 
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0"onclick="respuestahuron(0,this)"> No
+            </label>
+        </section>
+        <section id="p1">
+            <h3>2 - ¿La alimentación es muy importante?</h3>
+            <label>
+                <input type="radio" value="1" name="p1" onclick="respuestahuron(1,this)"> Si
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1" onclick="respuestahuron(1,this)"> No
+            </label>
+        </section>
+        <section id="p2">
+            <h3>3 - ¿Cuantos baños debe tener un hurón como minimo?</h3>
+            <label>
+                <input type="radio" value="1" name="p2" onclick="respuestahuron(2,this)"> 1 vez al año
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2" onclick="respuestahuron(2,this)"> 1 vez cada mes
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2" onclick="respuestahuron(2,this)"> 1 vez cada 8 meses
+            </label>
+            <label>
+                <input type="radio" value="4" name="p2" onclick="respuestahuron(2,this)"> 1 vez cada 2 meses
+            </label>
+        </section>
+        <section id="p3">
+            <h3>4 - ¿El suelo de la jaula debe ser de arena de gato?</h3>
+            <label>
+                <input type="radio" value="1" name="p3" onclick="respuestahuron(3,this)"> Si
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3" onclick="respuestahuron(3,this)"> No
+            </label>
+        </section>
+        <section id="p4">
+            <h3>5 - ¿Puede vivir solo en una jaula?</h3>
+            <label>
+                <input type="radio" value="1" name="p4" onclick="respuestahuron(4,this)"> Si
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4" onclick="respuestahuron(4,this)"> No
+            </label>
+        </section>
+        <button onclick="corregirhuron()">CORREGIR</button>
+        <H2>Cantidad acertadas: <span id="resultadohuron"></span></H2>
+        <h4>Conclusion: <span id="conclusionhuron"></span> </H4>
+    </div>
+    <script  src="{% static 'app/js/scripthuron.js' %}"> </script>
+</body>
+</html>>

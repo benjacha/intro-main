@@ -1,0 +1,133 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HowTo-Pet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    {% load static %}
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}" type="text/css">
+    
+</head>
+
+<body>
+
+    
+    <header id="header">
+       
+        <div class="contenedor_logo">
+            <img  class="logo"  src="{% static 'app/img/logo_trans.png' %}" alt="logo">
+        </div>
+
+        <div>
+            
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}"> Inicio </a></li>
+    
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>  
+                    <li>
+                        <a href="{% url 'perfil' user.pk %}">{{ user.username }} </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+            
+                </ul>
+            </nav>
+            
+        </div>
+
+    </header>
+</body>
+{% load crispy_forms_tags %}
+<style>
+    body {
+        background-color: rgba(250, 250, 250, 0.867);
+    }
+    .asa {
+        margin: 5px;
+      
+      text-align: center;
+
+    }
+    
+    .nav a {
+      display: inline-block;
+      font-size: 15px;
+      padding: 20px;
+        
+        }
+</style>
+
+{% block content %}
+{% if user.is_authenticated %}
+<br>
+<center><a href="{%url 'ver' %}"> Clic aquí para ver las mascotas de los demás.</a></center>
+<br><br>
+<div class="asa">
+    <form class="form-content" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <div>{{ form.animal|as_crispy_field }}</div>
+        <p >
+            {{ form.nombre|as_crispy_field }}
+        </p>
+        <p >
+        {{ form.imagen|as_crispy_field }}</p>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-4" style="background-color: #11a692dd;border: none; padding: 16px 32px;text-decoration: none;margin: 4px 2px;cursor: pointer;border-radius: 16px;font-size: 20px;">Subir mascota</button>
+        </div>
+    </form>
+    <br><br><br>
+    <form class="form-content" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <p >{{ formu.fav|as_crispy_field }}</p>
+            <button type="submit" class="btn btn-primary mt-4" style="background-color: #11a692dd;border: none; padding: 16px 32px;text-decoration: none;margin: 4px 2px;cursor: pointer;border-radius: 16px;font-size: 20px;"   >Cambiar favorito</button>
+        </div>        
+        </div>
+        
+    </a>
+    </form>
+</body></div>
+
+</div>
+<br>
+<div>{% for per in lista_user %}
+    {% if  per.username == user.username %}
+    
+    <p><center><br>Ingresa a tu perfil para poder eliminar tu favorito <a href = "{% url 'perfil' per.pk %}">{{ user.username }} </a></center></p>
+    {% endif %}
+    {% endfor %} 
+</div>
+{% else %}
+<center><h1 style=" color: red;"> Debes iniciar sesión para acceder a esta página. </h1></center>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endif %}
+<br><br><br><br><br><br><br>
+
+<footer>
+  <div class="marcas">
+      <img src="{% static 'app/img/dogchow.png' %}"  width="70" height="80"  alt="dog chow">
+      <img src="{% static 'app/img/Whiskas.png' %}"  width="158" height="80" alt="WHISKAS">
+      <img src="{% static 'app/img/Pedigree.png' %}" width="150" height="80" alt="pedigree">
+      <img src="{% static 'app/img/ChampionDog.png' %}" width="80" height="80" alt="champion dog">
+      <img src="{% static 'app/img/royalcanin3.png' %}" width="133" height="80" alt="royal canin">
+  </div>
+  <div class="logo_footer">
+      <center><img src="{% static 'app/img/logo_trans.png' %}" width="200" height="150" alt="logo"></center>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="{% static 'app/js/menu.js' %}"></script>
+
+
+{% endblock %}

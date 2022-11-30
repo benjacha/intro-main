@@ -1,0 +1,30 @@
+.button {
+     
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+}
+.button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+}
+.button1:hover {
+    background-color: white;
+    color: black;
+}
+h1{
+    font-family: Comic Sans MS; 
+    font-weight:bold; 
+    font-size: 30px; 
+    color: #1959c6; 
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}

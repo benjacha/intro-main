@@ -1,0 +1,68 @@
+{% load static %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+<style>
+   body {
+      background:url("/static/app/img/fondo.png");
+   }
+ 
+   #login-box .form .item input {
+   width: 200px; 
+   border: 0; 
+   border-bottom: 5px solid white; 
+   font-size: 18px;
+   background: #ffffff00;
+   color: white; 
+   padding: 5px 10px; 
+}
+   #login-box {
+       border: 1px solid blue;
+       width: 30%;
+       text-align: center;
+       margin: 0 auto;
+       margin-top: 15%;
+       background: #00000080;
+       padding: 20px 50px;
+   }
+   #login-box h1 {
+   color: white;
+   }
+   #login-box .form .item i {
+    color: white;
+    font-size: 18px;
+}
+</style>
+<center>
+<body style=" font-family: 'Lucida Sans' ; border: 20px solid #06793f;width: 20%;text-align: center;margin: auto; margin-top: 5% ; background-color: #EDF2F7 ;padding: 5%;margin-bottom: 50%;">
+<div class="sidenav" style="margin-top: -15% ; font-family: 'Lucida Sans' ">
+    <div class="login-main-text" s>
+       <h2 style="font-family: 'Lucida Sans'"> Crea tu cuenta</h2>
+       <a href="{% url 'home' %}">Volver al Inicio</a>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form">
+        <form class="form-content" enctype="multipart/form-data" method="POST" style=" width: 100%; border: 10px;  font-size: 18px ;background: #06793f ;color: rgb(0, 0, 0); padding: 5px 10px;" > 
+            {% csrf_token %}
+             <div class="form-group">
+                {{ form.username|as_crispy_field }}
+             </div>
+             <div class="form-group">
+                {{ form.password1|as_crispy_field }}
+             </div>
+             <div class="form-group">
+                {{ form.password2|as_crispy_field }}
+             </div>
+             <button type="submit" class="btn btn-black">Regístrate</button>
+             <p>¿Ya tienes una cuenta?<a class="link"  href="{% url 'login_url' %}">Iniciar Sesion</a></p>
+          </form>
+       </div>
+    </div>
+ </div>
+</bpdy>
+</center>
+
+{% endblock %}

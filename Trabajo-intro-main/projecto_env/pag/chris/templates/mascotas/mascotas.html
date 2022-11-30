@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+  <style>
+    h1 {color: rgb(25, 0, 255);}
+    h1 { font-size:50px; }
+  </style>
+</head> 
+
+<div> 
+    <br><br>
+    <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0fb5aa; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;"><center>Conejo</center><h1>
+    <br><br>
+</div>
+
+<div class="foto">
+
+  <img src="{% static 'app/img/conejo2.png' %}" alt= "fotoconejouno" style="width:33% ;">
+  <img src="{% static 'app/img/conejo1.png' %}" alt= "fotoconejodos" style="width:33% ;">
+  <img src="{% static 'app/img/conejo3.png' %}" alt= "fotoconejotres" style="width:33% ;"> 
+  <br>  
+</div>
+<body>
+  <br>
+  <center><h2>¿Por qué tener un conejo de mascota? <h2></center>
+  <br>
+  <h3> Los conejos son animales tiernos capaces de establecer vínculos afectivos con sus dueños y,
+     a diferencia de otros animales, buenos compañeros para los pequeños de la casa</h3>
+  <br>
+  <center><h2>¿Como cuidar un conejo? <h2></center>
+  <br>
+  <h4>-Lo primero que debes hacer si tienes un conejo es llevarlo al veterinario, para un chequeo general
+  <br>
+  <br>
+  -Los dientes de los conejos nunca dejan de crecer, por lo que es importante dales cosas duras para que muerda,ya que estos pueden causarles problemas a estos,
+   para gastar los dientes, el heno es esencial en su dieta. Además, conviene dejar que muerda cosas como trocitos de madera, cartón o ramas de árboles.
+   Al ir royendo desgastará el exceso de sus dientes
+  <br>
+  <br>
+   -Para que su pelo esté suave, brillante y sano es necesario cepillar el pelo del conejo varias veces por semana si es de pelo corto y a diario si es de pelo largo. Además, así quitaremos todo el pelo muerto y evitaremos que se lo trague lamiéndose. ¡Las bolas de pelo en el estómago pueden ser peligrosas!
+   <br>
+  <br>
+   -Los conejos no se deben bañar, ellos mismos dedican mucho tiempo a su propia higiene. En caso de que, por un motivo determinado, esté muy sucio,
+    podemos hacerle una limpieza en seco. ¡Pero nunca un baño de agua y jabón!
+  <br>
+  <br>
+  -Si tienes al conejito en una jaula, déjale salir a corretear un par de veces al día.
+    ¡Pero cuidado! Cuando lo hagas, que sea siempre en un ambiente completamente apto para él y bajo vigilancia.
+     Si no, podría correr peligro de ser pisado o morder unos cables y electrocutarse.
+   Para saber cómo cuidar a un conejo. Los ingredientes básicos de la comida para conejos son el heno, el pienso y los vegetales (frutas y verduras).
+   <br>
+  <br>
+   -Incluso con los mejores cuidados, a veces las mascotas se enferman. En caso de detectar comportamientos inusuales o síntomas de enfermedad en tu conejo,
+    acude al veterinario lo antes posible. Cuanto más temprano sea el inicio de su tratamiento, más fácil será curarle.
+    
+  </h4>
+  <br>
+  
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quizconejo' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar un conejo.</button></a></center>
+  </div>
+{% endblock %}

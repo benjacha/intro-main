@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+ 
+<div> 
+  <br><br>
+  <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0596a6; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;" ><center>Gatos</center><h1>
+  <br><br>
+</div>
+
+<div class="foto">
+
+    <img src="{% static 'app/img/gato2.png' %}" alt= "fotogatouno" width="330" height="300">
+    <img src="{% static 'app/img/gato1.png' %}" alt= "fotogatouno" width="330" height="350">
+    <img src="{% static 'app/img/gato3.png' %}" alt= "fotogatoouno" width="330" height="300"> 
+    <br>  
+</div>
+<body>
+    <br>
+    <center><h2>¿Por qué tener un gato de mascota? <h2></center>
+    <br>
+    <h3>Se ha comprobado que tener un gato reduce el estrés, son buenos compañeros para quienes están tristes o deprimidos además de ser cariñosos y lo más importante es que son independientes</h3>
+    <br>
+    <center><h2>¿Como cuidar un gato? <h2></center>
+    <br>
+    <h4>
+    <br>
+
+    -Visita al veterinario al menos una vez al año, desparasita a tu gato, se recomienda que se esterilicen, ya que al estar esterilizados están más tranquilos, evitan enfermedades y aumenta su esperanza de vida.
+    <br>
+    <br>
+      -Con respecto a la alimentación, aquí debes consultar a tu veterinario, ya que cada gato tiene su propio peso y necesidad nutricional, debes comprar una buena marca, ya que así te aseguras de que tu mascota estará saludable.
+    </h4>
+    <br>
+    <h4>-Es normal que el gato, los primeros días después de su llegada a su nuevo hogar, esté un poco desorientado, ya que para él todo es nuevo. Así que necesitará de mucha paciencia, atención y cuidados hasta que se sienta cómodo y se adapte a su nuevo espacio.
+    <br>
+    <br>
+    -Los gatos son animales inquietos y ya verás que se meten en todos los rincones. Ante este carácter aventurero, tendremos que tomar ciertas medidas de precaución cerrando los balcones, puertas y ventanas o buscar alternativas como las mallas o algún tipo de barrera para evitar saltos y caídas.
+    <br>
+    <br>
+      -Si hay niños en la casa hay que enseñarles a que lo respeten. Aunque tienen mucha paciencia, no soportan tirones de rabo, sustos o sujeciones inadecuadas.
+      Y, por último, si ya tenías otras mascotas en el hogar, hay que prestar especial atención a todas aquellas que puedan ser presa de tu gato: pájaros, peces o pequeños roedores. No olvides que son depredadores natos por lo que tendrás que salvaguardar el hábitat de los pequeños animales y mantenerlos separados siempre de los felinos.
+      Una vez que hayas despejado todos los posibles “peligros” con los que tu gato se pueda encontrar, hay que ocuparse de su bienestar. Elige una zona de la casa para que duerma y juegue y otra para colocar su arenero, donde poder satisfacer sus necesidades fisiológicas siempre que lo necesite.
+      
+    </h4>
+    <br>
+    <h4>-Otro elemento básico que necesitará tu gato desde el minuto uno es el arenero para hacer sus necesidades. Existen diferentes tipos de arenas para gatos, una vez que hayas elegido la que más os convenga, tendrás que esparcirla por el fondo del cajón hasta que tenga la cantidad suficiente para que absorba la orina y tu gato pueda escarbar para ocultar las heces. Ubica su arenero en un lugar tranquilo y al que pueda acceder con facilidad.
+    <br>
+    <br>
+    -No es aconsejable bañar con mucha frecuencia al gato, nunca más de una vez al mes y siempre con champú específico para gatos. El baño se debe realizar una vez que esté vacunado por completo. Bañarle en exceso hará que se elimine la película protectora de la piel y puede provocarle dermatitis y problemas de pelo.
+    <br>
+    <br>
+      -Es imprescindible que tenga tres recipientes, uno para la comida seca, otro para la comida húmeda y otro para el agua, que debes cambiar a menudo para que esté fresca y limpia. Para mantener el comedero y el bebedero limpio, debes lavarlos siempre tras cada utilización.
+    </h4>
+    <br><br>
+    
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quizgato' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar un gato.</button></a></center>
+  </div>
+{% endblock %}

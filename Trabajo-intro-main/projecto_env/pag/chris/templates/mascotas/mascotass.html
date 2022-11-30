@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+  <style>
+    h1 {color: rgb(25, 0, 255);}
+    h1 { font-size:50px; }
+  </style>
+</head> 
+
+<div> 
+    <br><br>
+    <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0f7100; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;"><center>TORTUGA</center><h1>
+    <br><br>
+</div>
+
+<div class="foto">
+
+  <img src="{% static 'app/img/tortuga1.png' %}" alt= "fototortugauno" style="width:33% ;">
+  <img src="{% static 'app/img/tortuga2.png' %}" alt= "fototortugados" style="width:33% ;">
+  <img src="{% static 'app/img/tortuga3.png' %}" alt= "fototortugatres" style="width:33% ;"> 
+  <br>  
+</div>
+<body>
+  <br>
+  <center><h2>¿Por qué tener una tortuga de mascota? <h2></center>
+  <br>
+  <h3> Lo mejor de las totugas es que son silenciosas y tranquilas, para cuidarlas solo nesecitas un espacio acogedor y una alimentacion adecuada y si no tienes tanto tiempo ni dinero, esta es tu mascota, ya que es muy sencillo y economico cuidar de ellas</h3>
+  <br>
+  <center><h2>¿Como cuidar una tortuga ? <h2></center>
+  <br>
+  <h4> -Antes de todo, debes saber que tipo de tortuga es la que quieres, debes saber si se trata de una tortuga terrestre
+     o una tortuga de agua. Esto implicará el tipo de habitad que necesitará tu tortuga, la alimentación que necesitara, entre otras cosas. 
+  <br>
+  <br>
+  -Para cuidar de la mejor forma a una tortuga, debes alimentarla segun sus requerimientos.
+  Lo ideal es el pienso extrusionado para tortugas sea la base de su alimentacion, aunque tambien puedes acompañarlo de verduras, legumbres y pescado.
+  <br>
+  <br>
+  -La cantidad y los intervalos de alimentacion deberan ser recomendados por un veterinario, tambien el requerimiento de calcio, el cual es muy importante para su salud, 
+  como tambien para el perfecto mantenimiento de su caparazon
+  <br>
+  <br>
+  -Tener una tortuga en casa significa darle su propio hogar y un lugar para descansar. Un espacio especial solo para ella, que se adapta a todas sus necesidades.
+  Hay dos tipos de tortugas, segun su habitad, tortugas de agua y tortugas terrestres:
+  <br>
+  <br>
+    -Tortuga de agua:
+  <br>
+  <br>
+    -Este tipo de tortugas deben tener un acuario donde puedan nadar y proporcionarles un espacio seco para que descansen.  
+    Debes mantener el agua a temperatura ambiente y asegurarte de que estén expuestos a la luz solar directa.
+    Tenemos que cambiar el agua dos veces por semana y limpiar el acuario a fondo cada mes.
+   <br>
+   <br>
+    -Tortuga terrestre:
+  <br>
+  <br>
+      -A estas tortugas, hay que darles más espacio para que deambulen libremente. Sin embargo, también puede proporcionarle un cuerpo de agua para bañarse.
+  <br>
+  <br>
+    -Las tortugas son animales que no regulan la temperatura de su cuerpo, por lo que debes asegurarte de que su habitación esté a la temperatura adecuada en todo momento.
+    Para ello, el veterinario podrá decir que el clima según el aspecto de la tortuga es acertado.
+    <br>
+    <br>
+    -Pero como base se puede suponer que para las tortugas acuáticas, el lugar apropiado es entre 26 y 30 grados.
+    Para las tortugas terrestres, la temperatura ideal es de 27 a 30 grados.
+    <br>
+    <br>
+    -La luz solar directa es otro elemento que no se debe omitir, el cual es necesario para la salud de las tortugas,
+    incluso algunas especies de estos reptiles deben estar como minimo 15 minutos al sol. Ahora bien, si tu mascota no puede recibir luz natural,
+    puedes imitarla con una lámpara para reptil.
+
+  </h4>
+  <br>
+  
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white(255, 255, 255);
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quiztortuga' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar una tortuga .</button></a></center>
+  </div>
+{% endblock %}

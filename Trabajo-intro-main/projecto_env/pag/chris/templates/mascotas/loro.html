@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+  <style>
+    h1 {color: rgb(25, 0, 255);}
+    h1 { font-size:50px; }
+  </style>
+</head> 
+
+<div> 
+    <br><br>
+    <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0fb5aa; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;"><center>Loro</center><h1>
+    <br><br>
+</div>
+
+<div class="foto">
+
+  <img src="{% static 'app/img/loro2.png' %}" alt= "fotolorouno" style="width:33% ;">
+  <img src="{% static 'app/img/loro1.png' %}" alt= "fotolorodos" style="width:33% ;">
+  <img src="{% static 'app/img/loro3.png' %}" alt= "fotolorotres" style="width:33% ;"> 
+  <br>  
+</div>
+<body>
+  <br>
+  <center><h2>¿Por qué tener un Loro de mascota? <h2></center>
+  <br>
+  <h3>Como muchas personas saben lo más atractivo de tener un loro de mascota es que aprenden a repetir palabras lo que provoca que sean entretenidos y sociables, son faciles de cuidar, son preciosos, gracias a todo esto fácilmente te puedes encariñar con ellos.</h3>
+  <br>
+  <center><h2>¿Como cuidar un Loro? <h2></center>
+  <br>
+  <h4>-La jaula que alijas debe estar adaptada al tamaño de tu loro, debe tener espacio para moverse.  </h4>
+  <br>
+  <h4>-Su alimentación es a base de granos o semillas, se puede complementar con frutas y verduras para que logren recibir toda sus vitaminas.</h4>
+  <br>
+  <h4>-El pico de los loros se debe ir desgastando por lo que necesitan tener hueso de sepia o una piedra de calcio para que rasquen su pico.</h4>
+  <br>
+  <h4>-Para el suelo de la jaula puedes colocar arena para gatos o algún otro, que debes cambiar una vez por semana.</h4>
+  <br>
+  <h4>-Si le dedicas un par de horas al día podrás enseñarle palabras.</h4>
+  <br>
+  <h4>-Si decides soltar a tu loro de la jaula asegurate de que no se escape por ningún sitio de tu hogar, cierra ventanas y puertas.</h4>
+  <br>
+  <h4>-Algunos de los accesorios que no pueden faltar en las jaulas de los loros son los juguetes, estos permiten que se distraigan dentro de la jaula y les resulte más soportable el tiempo que pasan en ella sin salir ejercitarse dentro de la casa,  y para que puedan sentirse realmente a gusto mucha personas recomiendan que vivan en parejas.</h4>
+  <br>
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quizloro' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar un Loro.</button></a></center>
+  </div>
+{% endblock %}

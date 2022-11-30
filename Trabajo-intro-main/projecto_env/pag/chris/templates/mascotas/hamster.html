@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+  <style>
+    h1 {color: rgb(25, 0, 255);}
+    h1 { font-size:50px; }
+  </style>
+</head> 
+
+<div> 
+    <br><br>
+    <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0fb5aa; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;"><center>Hamster</center><h1>
+    <br><br>
+</div>
+
+<div class="foto">
+
+  <img src="{% static 'app/img/hamster2.png' %}" alt= "fotohamsteruno" style="width:33% ;">
+  <img src="{% static 'app/img/hamster1.png' %}" alt= "fotohamsterdos" style="width:33% ;">
+  <img src="{% static 'app/img/hamster3.png' %}" alt= "fotohamstertres" style="width:33% ;"> 
+  <br>  
+</div>
+<body>
+  <br>
+  <center><h2>¿Por qué tener un Hamster de mascota? <h2></center>
+  <br>
+  <h3>Pueden convivir solos, no necesitan de otros compañeros hámster, disfrutan sus espacios, son muy territoriales, así que no deberás invertir en compañía.</h3>
+  <br>
+  <center><h2>¿Como cuidar un Hamster? <h2></center>
+  <br>
+  <h4>-La jaula de su hámster debe ser de metal, con la base sólida y segura ya que si el material es malo se puede estropear y oxidar rápidamente.
+     Debes colocarla en un lugar seguro, alejado de la luz solar directa, de corrientes de aires fuertes y de otras mascotas como perros o gatos y
+      que puedan resultar agresivas e intimidatorias para él.
+  <br>
+  <br>
+  -Tu hámster puede alimentarse 2 veces al día. Te aconsejamos que le suministres una mezcla de alimentos que vienen preelaborados y suelen contener varios tipos de semillas y maíz entre otros agregados.
+   También les gusta mucho las frutas y verduras que deberás suministrarle en pocas cantidades.
+  <br>
+  <br>
+-La hidratación es de suma importancia. Asegúrate de que su bebedero esté siempre lleno de agua para evitar su deshidratación. Ten en cuenta que debes cambiarle el agua a diario.
+  <br>
+  <br>
+  -Los hámsters son muy limpios y esto se refleja en la vivienda que ocupan. Se caracterizan por ser muy organizados.
+   En sus jaulas organizan los sectores dividiéndolos por áreas para comer, dormir y hacer sus necesidades, ten esto en cuenta a la hora de preparar su jaula.
+   <br>
+   <br>
+   -Es aconsejable limpiar la jaula una o dos veces por semana. El procedimiento adecuado para limpiar la jaula es sacar todo su contenido y lavarla con agua
+    y jabón, prestando especial atención a esquinas, para evitar pulgas y garrapatas.
+   <br>
+   <br>
+   -Aunque sean animales muy pequeños, es importante que cuides su pelaje cepillándolo de vez en cuando.
+     En las tiendas de animales hay peines especiales para hamsters que debes usar. 
+  <br>
+  <br>
+  -También es importante cortarle las uñas cuando le crezcan demasiado. Puedes hacerlo tú mismo con un cortauñas especial para hámster,
+   pero si no sabes cómo hacerlo, lo mejor es que lo lleves al veterinario y allí se las cortarán, y te enseñará como hacerlo.
+   <br>
+  <br>
+  -Planifica una desinfección de la jaula una vez al mes para evitar parásitos. En las tiendas de animales hay productos específicos que te ayudarán en la tarea. 
+  </h4>
+  <br>
+  
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quizhamster' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar un Hamster.</button></a></center>
+  </div>
+{% endblock %}

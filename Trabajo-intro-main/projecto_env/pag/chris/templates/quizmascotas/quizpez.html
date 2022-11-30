@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HowTo-Pet</title>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}" type="text/css">
+        
+    </head>
+    
+    <body>
+    
+        
+        <header id="header">
+            
+            <div class="contenedor_logo">
+                <img  class="logo"  src="{% static 'app/img/logo_trans.png' %}" alt="logo">
+            </div>
+    
+            <div>
+                
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="{% url 'home' %}"> Inicio </a></li>
+                        <li>
+                            <a href="{% url 'mascota1pag' %}"> Atras </a></li>
+                        <li>
+                            <a href="{% url 'galeria' %}">usuario</a></li>
+    
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </li>  
+                        <li>
+                            <a href="#">{{ user.username}} </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'login' %}">Login</a>
+                        </li>
+                        
+                        {% endif %}
+                
+                    </ul>
+                </nav>
+    
+            </div>
+    
+        </header>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="{% static 'app/css/estiloquiz.css' %}">
+</head>
+<br>
+<br>
+<body>
+    <div>
+        <center><h1></h1></center>
+        <center><p>¿Podras cuidar a un pez?</p></center>
+    </div>
+    <div class="container">
+        <section id="p0">
+            <h3>1 - ¿Que puede comer tu pez?</h3>
+            <label>
+                <input type="radio" value="1" name="p0" onclick="respuestapez(0,this)"> Detrito
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0"onclick="respuestapez(0,this)"> Bacterias
+            </label>
+            <label>
+                <input type="radio" value="3" name="p0"onclick="respuestapez(0,this)"> Gusanos
+            </label>
+            <label>
+                <input type="radio" value="4" name="p0"onclick="respuestapez(0,this)"> Todas las anterioes
+            </label>
+        </section>
+        <section id="p1">
+            <h3>2 - ¿Por que la calidad del agua es importante en el cuidado de un pez?</h3>
+            <label>
+                <input type="radio" value="1" name="p1" onclick="respuestapez(1,this)"> Porque esta determina la buena salud del pez
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1" onclick="respuestapez(1,this)"> No implica en nada la calidad del agua
+            </label>
+        </section>
+        <section id="p2">
+            <h3>3 - ¿Que nesecitan los peces para estar comodos en su habitad?</h3>
+            <label>
+                <input type="radio" value="1" name="p2" onclick="respuestapez(2,this)"> Recivir luz durante su dia a dia
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2" onclick="respuestapez(2,this)"> Un acuario en donde puedan moverse con libertad
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2" onclick="respuestapez(2,this)"> Una cita anual al veterinario, para descartar
+            </label>
+            <label>
+                <input type="radio" value="4" name="p2" onclick="respuestapez(2,this)"> Todas las anteeriores
+            </label>
+        </section>
+        <section id="p3">
+            <h3>4 - ¿Que cantidad de agua es recomendable cambiar y cada cuanto tiempo?</h3>
+            <label>
+                <input type="radio" value="1" name="p3" onclick="respuestapez(3,this)"> Cambiar un 30% de agua, una vez por semana
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3" onclick="respuestapez(3,this)"> Cambiar el 100% de agua, varias veces a la semana
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3" onclick="respuestapez(3,this)"> Cambiar un 30% de agua, varias veces a la semana
+            </label>
+        </section>
+        <section id="p4">
+            <h3>5 - "Los peces respiran oxigeno del agua", esta frase es:</h3>
+            <label>
+                <input type="radio" value="1" name="p4" onclick="respuestapez(4,this)"> Verdadera
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4" onclick="respuestapez(4,this)"> Falsa
+            </label>
+        </section>
+        <button onclick="corregirpez()">CORREGIR</button>
+        <H2>Cantidad acertadas: <span id="resultadopez"></span></H2>
+        <h4>Conclusion: <span id="conclusionpez"></span> </H4>
+    </div>
+    <script  src="{% static 'app/js/scriptpez.js' %}"> </script>
+</body>
+</html>>

@@ -1,0 +1,107 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HowTo-Pet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    {% load static %}
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}" type="text/css">
+    
+</head>
+
+<body>
+
+    
+    <header id="header">
+       
+        <div class="contenedor_logo">
+            <img  class="logo"  src="{% static 'app/img/logo_trans.png' %}" alt="logo">
+        </div>
+
+        <div>
+            
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}"> Inicio </a></li>
+    
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>  
+                    <li>
+                        <a  href = "{% url 'perfil' user.pk %}">{{ user.username }} </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+            
+                </ul>
+            </nav>
+            
+        </div>
+
+    </header>
+</body>
+{% load crispy_forms_tags %}
+<style>
+    body {
+        background-color: #7fe4e73a;
+    }
+    .asa {
+        margin: 5px;
+      
+      text-align: center;
+
+    }
+    
+    .nav a {
+      display: inline-block;
+      font-size: 15px;
+      padding: 20px;
+        
+        }
+</style>
+{% load crispy_forms_tags %}
+{% block contenido %}
+<form class="form-content" enctype="multipart/form-data" method="POST" >
+    {% csrf_token %}
+    <br>
+    <center><h1 >Haz aquí tu pregunta</h1></center>
+    <center><div style="width: 100% ;">{{ form.pregunta|as_crispy_field }}</div></center>
+    <div class="text-center">
+    <center><button type="submit" class="btn btn-primary mt-4" style="background-color: #11a692dd;border: none; padding: 16px 32px;text-decoration: none;margin: 4px 2px;cursor: pointer;border-radius: 16px;font-size: 20px;">Subir pregunta</button></center>
+    </div>
+    <center><h5>Nota: Si no has iniciado sesión tu pregunta no se subirá</h5></center>
+    <br>
+    <br>
+    <center><a style = "font-size: 20px; " href="{%url 'verpreguntas' %}"> Clic aquí para ver las preguntas de los demás.</a></center>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+
+    <div class="marcas">
+
+        <img src="{% static 'app/img/dogchow.png' %}" width="70" height="80"  alt="dog chow">
+        <img src="{% static 'app/img/Whiskas.png' %}"  width="158" height="80" alt="WHISKAS">
+        <img src="{% static 'app/img/Pedigree.png' %}" width="150" height="80" alt="pedigree">
+        <img src="{% static 'app/img/ChampionDog.png' %}" width="80" height="80" alt="champion dog">
+        <img src="{% static 'app/img/royalcanin3.png' %}" width="133" height="80" alt="royal canin">
+    </div>
+    <div class="logo_footer">
+        <center><img src="{% static 'app/img/logo_trans.png' %}" width="200" height="150" alt="logo"></center>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="{% static 'app/js/menu.js' %}"></script>
+{% endblock %}

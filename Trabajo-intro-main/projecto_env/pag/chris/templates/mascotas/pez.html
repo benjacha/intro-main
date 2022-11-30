@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+  <style>
+    h1 {color: rgb(25, 0, 255);}
+    h1 { font-size:50px; }
+  </style>
+</head> 
+
+<div> 
+    <br><br>
+    <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0fb5aa; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;"><center>Pez</center><h1>
+    <br><br>
+</div>
+
+<div class="foto">
+
+  <img src="{% static 'app/img/pez2.png' %}" alt= "fotopezuno" style="width:33% ;">
+  <img src="{% static 'app/img/pez1.png' %}" alt= "fotopezdos" style="width:33% ;">
+  <img src="{% static 'app/img/pez3.png' %}" alt= "fotopeztres" style="width:33% ;"> 
+  <br>  
+</div>
+<body>
+  <br>
+  <center><h2>¿Por qué tener un pez de mascota? <h2></center>
+  <br>
+  <h3>Los conocedores del tema sostienen que los acuarios con peces ayudan a controlar alteraciones de la presión arterial y la frecuencia cardíaca,
+     esto debido a su efecto relajante, a que mejoran la calidad del sueño y son, además, antidepresivos porque ayuda a simular un ambiente natural.
+  </h3>
+  <br>
+  <center><h2>¿Como cuidar un pez? <h2></center>
+  <br>
+  <h4>- En primer lugar, acude a un centro veterinario especializado para informarte sobre los cuidados que necesita este animal, y no te lances si no estás seguro de poder hacer todo lo que se requiere.
+    <br>
+    <br>
+    - Alimenta a tus peces, pero no los sobrealimentes. Busca el mejor alimento para ellos y sigue las cantidades recomendadas. Pueden ser detrito, bacterias, plancton, gusanos, insectos, caracoles, plantas acuáticas y peces. Su abundancia depende en gran medida de la calidad del agua.
+    <br>
+    <br>
+    - El tamaño del acuario es tan importante para nosotros como el tamaño de la cama. Encuentre los acuarios adecuados para las especies que desea conservar. Recuerde, elija siempre el tamaño más grande que pueda pagar.
+    <br>
+    <br>
+    -Procura mantener el agua de los peces en perfectas condiciones para que estén cómodos y disfruten. Además, la calidad del agua determinará la buena salud de los peces.
+    <br>
+    <br>
+    - Los peces respiran oxígeno del agua, por lo que es importante que tengan suficiente oxígeno. Averigüe qué necesita su pez e instale la bomba adecuada. Según el tipo y el tamaño, es posible que también necesites un filtro que purifique y oxigene el agua.
+    <br>
+    <br>
+    - Se recomienda cambiar el 30% del agua del acuario varias veces a la semana.
+    <br>
+    <br>
+    - Los peces necesitan luz durante el día.
+    <br>
+     </h4>
+  <br>
+  
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quizpez' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar un pez .</button></a></center>
+  </div>
+{% endblock %}

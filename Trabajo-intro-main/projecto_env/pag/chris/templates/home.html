@@ -1,0 +1,351 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block js %}
+
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.slider').bxSlider({
+          mode: 'fade',//horizontal, vertical, fade
+          auto: true,
+          pause: 2000
+      });
+    });
+</script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<style>
+    body {
+        background:url("/static/app/img/fondo.png");
+    }
+    .button {
+         
+      border: none;
+      color: white;
+      padding: 16px 2px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 18px;
+      margin: 4px 100px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      width: 80%;
+    }
+    .button1 {
+      background-color: #0fa484; 
+      color: black; 
+      cursor: pointer;
+      border: 2px solid #0fa484;
+      border-radius: 16px
+
+    }
+    .button1:hover {
+      background-color: #EDF2F7;
+      color: black;
+    }
+    
+    </style>
+    <div class="button">
+      <center><a href="{% url 'recomendacion' %}"><button class="button button1"  >¿Que animal te recomendamos?</button></a></center>
+    </div>
+
+
+<br>
+<br>
+<div class ='informacion' style=" background-color: rgba(255, 255, 255, 0.872); "> 
+    <h1>   Si quieres saber como cuidar a tu mascota esta página es para ti.
+    <br>
+      
+    </h1> 
+    <br>
+    <p style="margin: 0px 10px">  <center>  Antes que nada, si estás pensando en tener una mascota, debes asumir la responsabilidad que esto conlleva.</center>
+        <br>
+        <center><p style="color:r"> UNA MASCOTA ESTA CONTIGO HASTA QUE UNO DE LOS 2 MUERA</p></center>
+        <br><p style="margin: 0px 10px">Cuando tienes o deseas tener una mascota, siempre queremos buscar la mejor forma de cuidar a nuestra mascota mientras estas crecen,
+         es por eso que HOW TO-PET llego para solucionar tus problemas, esta página te ayudará proporcionándote información para cuidar de la mejor forma a tu mascota,
+          e informarse sobre cuál quieres y porque elegirlo.
+    </p></p>
+</div>
+<br><br>
+{% if user.is_authenticated %}
+<h2> Favoritos  </h2>
+<body>
+    {% for Fav in lista_favorito %}
+    {% if user.username == Fav.usuario and Fav.fav == 'Perro' %}
+    
+    <div class="producto" style="display: inline-block;">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'perropag' %}"> <img src="{% static 'app/img/perrofav.png' %}" /> </a>
+            <div class="detalle">
+                <h5></h5>
+                <center><h2>Perro</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    </div>
+    {% elif user.username == Fav.usuario and Fav.fav == 'Gato' %}
+    <div class="producto" style="display: inline-block;">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'gato' %}"> <img src="{% static 'app/img/gatofav.png' %}" /> </a>
+            <div class="detalle">
+                <h1></h1>
+                <center><h2>Gato</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    
+    </div>
+    {%  elif user.username == Fav.usuario and Fav.fav == 'Conejo' %}
+    <div class="producto" style="display: inline-block;">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'mascota1pag' %}"> <img src="{% static 'app/img/conejofav.png' %}" /> </a>
+            <div class="detalle">
+                <h5></h5>
+                <center><h2>Conejo</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    {% elif user.username == Fav.usuario and Fav.fav == 'Tortuga' %}
+    <div class="producto" style="display: inline-block;">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'mascota2pag' %}"> <img src="{% static 'app/img/tortugafav.png' %}" /> </a>
+            <div class="detalle">
+                <h5r</h5>
+                <center><h2>Tortuga</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    </div>
+    {% elif user.username == Fav.usuario and Fav.fav == 'Loro' %}
+    <div class="producto">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'loro' %}"> <img src="{% static 'app/img/loro.png' %}" /> </a>
+            <div class="detalle">
+                <h5></h5>
+                <center><h2>Loro</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    
+    </div>
+    {% elif user.username == Fav.usuario and Fav.fav == 'Hamster' %}
+    <div class="producto">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'hamster' %}"> <img src="{% static 'app/img/hamster.png' %}" /> </a>
+            <div class="detalle">
+                <h5></h5>
+                <center><h2>Hamster</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    
+    </div>
+    {% elif user.username == Fav.usuario and Fav.fav == 'Pez' %}
+    <div class="producto">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'pez' %}"> <img src="{% static 'app/img/pezfav.png' %}" /> </a>
+            <div class="detalle">
+                <h5></h5>
+                <center><h2>Pez</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    
+    </div>
+    {% elif user.username == Fav.usuario and Fav.fav == 'Hurón' %}
+    <div class="producto">
+
+        <div class="contenedor_producto">
+    
+            <a href="{% url 'huron' %}"> <img src="{% static 'app/img/huron.png' %}" /> </a>
+            <div class="detalle">
+                <h5></h5>
+                <center><h2>Hurón</h2></center>
+                <h3></h3>
+            </div>
+    
+        </div>
+    
+    </div>
+    {% endif %}
+    {% endfor %}
+    
+    
+{% endif %}
+<br><br>
+</tbody>  
+    <center><h2>Mascotas más populares.</h2></center>
+<br>
+  
+<div class="productos">
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'perropag' %}"> <img src="{% static 'app/img/perro2.png' %}" /> </a>
+        <div class="detalle">
+            <h5></h5>
+            <center><h2>Perro</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'gato' %}"> <img src="{% static 'app/img/gato.png' %}" /> </a>
+        <div class="detalle">
+            <h1></h1>
+            <center><h2>Gato</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'mascota1pag' %}"> <img src="{% static 'app/img/conejo.png' %}" /> </a>
+        <div class="detalle">
+            <h5></h5>
+            <center><h2>Conejo</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'mascota2pag' %}"> <img src="{% static 'app/img/tortuga.png' %}" /> </a>
+        <div class="detalle">
+            <h5r</h5>
+            <center><h2>Tortuga</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'pez' %}"> <img src="{% static 'app/img/pez.png' %}" /> </a>
+        <div class="detalle">
+            <h5></h5>
+            <center><h2>Pez</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'hamster' %}"> <img src="{% static 'app/img/hamster.png' %}" /> </a>
+        <div class="detalle">
+            <h5></h5>
+            <center><h2>Hamster</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'loro' %}"> <img src="{% static 'app/img/loro.png' %}" /> </a>
+        <div class="detalle">
+            <h5></h5>
+            <center><h2>Loro</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <a href="{% url 'huron' %}"> <img src="{% static 'app/img/huron.png' %}" /> </a>
+        <div class="detalle">
+            <h5></h5>
+            <center><h2>Hurón</h2></center>
+            <h3></h3>
+        </div>
+
+    </div>
+
+</div>  
+ 
+</div>
+<br><br>
+{% if not user.is_authenticated %}
+<center><h0 style=" color: red;"> Te recomendamos iniciar sesión para poder guardar tu información. </h0></center>
+{% endif %}
+<div class="producto">
+
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

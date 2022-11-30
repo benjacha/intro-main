@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+  <style>
+    h1 {color: rgb(25, 0, 255);}
+    h1 { font-size:50px; }
+  </style>
+</head> 
+
+<div> 
+    <br><br>
+    <h1 style="font-family: Comic Sans MS; font-weight:bold; font-size: 50px; color: #0fb5aa; text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68;"><center>Hurón</center><h1>
+    <br><br>
+</div>
+
+<div class="foto">
+
+  <img src="{% static 'app/img/huron2.png' %}" alt= "fotohuronuno" style="width:33% ;">
+  <img src="{% static 'app/img/huron1.png' %}" alt= "fotohurondos" style="width:33% ;">
+  <img src="{% static 'app/img/huron3.png' %}" alt= "fotohurontres" style="width:33% ;"> 
+  <br>  
+</div>
+<body>
+  <br>
+  <center><h2>¿Por qué tener un Hurón de mascota? <h2></center>
+  <br>
+  <h3>El hurón es un animal con energía y vitalidad, es excelente como animal de compañia, ya que es muy juguetón. Ellos son muy inteligentes y sociables con sus compañeros humanos, se adaptan muy facilmente a muchas cosas  </h3>
+  <br>
+  <center><h2>¿Como cuidar un Hurón? <h2></center>
+  <br>
+  <h4>-Se puede tener libre en el hogar, como puede estar dentro de una jaula limitada, pero igual es importante que este libre algunas horas al día</h4>
+  <br>
+  <h4>-Los hurones crecen muy rápido y su intestino es corto. Una dieta equilibrada es importante para su bien estar.</h4>
+  <br>
+  <h4>-Debe tener cuidado si hay pájaros o roedores en su hogar, ya que los hurones son cazadores innatos.</h4>
+  <br>
+  <h4>-Al menos necesitan un baño cada mes, su limpieza es muy relevante.</h4>
+  <br>
+  <h4>-Se recomienda que castres a tu hurón, así evitan enfermedades.</h4>
+  <br>
+  <h4>-Llevarlo al veterinario es obligatorio al igual que a todos los animales.</h4>
+  <br>
+  <h4>-Necesitan comida durante todo el día porque van ingiriendo pequeñas cantidades.</h4>
+  <br>
+  <h4>-El suelo de la jaula deberá ser de pellets absorbentes, una toalla o trozos de papel rasgado.</h4>
+  <br>
+  <h4>-Se recomienda fijar la bandeja sanitaria y el comedero a su jaula para que no las desordenen.</h4>
+</body>
+<style>
+  .button {
+       
+    border: none;
+    color: white;
+    padding: 16px 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 100px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 80%;
+  }
+  .button1 {
+    background-color: #0777c7d6; 
+    color: black; 
+    cursor: pointer;
+    border: 2px solid #0777c7d6;
+  }
+  .button1:hover {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  
+  </style>
+  <div class="button">
+    <center><a href="{% url 'quizhuron' %}"><button class="button button1"  >Iniciar cuestionario para saber si eres apto de cuidar un Hurón.</button></a></center>
+  </div>
+{% endblock %}
